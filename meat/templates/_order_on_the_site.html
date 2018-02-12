@@ -1,0 +1,12 @@
+{% extends 'about.html' %}
+{% load crispy_forms_tags %}
+{% block logo %} Як зробити замовлення? {% endblock logo %}
+
+{% block content %}
+
+	<div class="container">
+
+		{% crispy form %}
+
+	</div>
+{% endblock content %}

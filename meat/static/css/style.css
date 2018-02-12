@@ -1,0 +1,671 @@
+/* base page */
+.container {
+	margin-top: 25px;	
+
+}
+.p_color_logo {
+	font-family: Garamond;
+	font-weight: bold;
+	color: rgb(85, 165, 205);
+	font-size: 38px;
+	text-align: center;
+	
+}
+.p_color_logo:hover {
+	color:#fc6744;
+	--webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	outline: none;
+	box-shadow: -5px 12px 15px 0px #fc6744;
+	
+}
+
+.span_color_logo {
+	font-weight: bold;
+	color: #fc6744;
+	transform: translateY(-16px);
+}
+.span_color_logo:hover {
+	color: rgb(85, 165, 205);
+	--webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.main_form input:focus {
+	outline: none;
+}
+.main_form input {
+	border: none;
+/*	border-bottom: 1px solid grey; */	
+}
+
+.main_form label, input {
+	margin-top: 15px;	
+}
+
+p.main_page_logo {
+	margin-left:0px;
+}
+
+.white {
+	color: white;
+}
+
+.input:active {
+	text-shadow: 0px 0px 90px 0px rgba(40, 40, 90, 0.9);
+}
+
+h3 {
+	text-shadow: 0px 0px 30px 0px rgba(40, 40, 90, 0.9);
+}
+#span_footer {
+	font-size: 12px;
+	font-style: italic;
+}
+
+
+/* 'як зал. відгук' сплив. вікно */
+.overlay-nav#enter_window {
+	display: none;
+	padding: 10px 20px;
+	position: fixed;
+	width: 300px;
+	height: 50px;
+	top: 240px;
+	right: 225px;
+	color: 	#008b8b;
+	font-family: Georgia;
+	text-align: left;
+	font-size: 18px;
+
+}
+.close_enter_window {
+	position: fixed;
+	font-style: 45px;
+	font-size: 25px;
+	top: 215px;
+	right: 215px;
+	color: grey;
+
+}
+.close_enter_window:hover {
+		cursor: pointer;
+		--webkit-transition:  all 0.2s;
+		-moz-transition:  all 0.2s;
+		-ms-transition:  all 0.2s;
+		-o-transition:  all 0.2s;
+		transition:  all 0.2s;
+		color: #fc6744;
+}
+
+/* assorthment page */
+.assorthment_box {
+	margin: 20px auto;
+	position: relative;
+}
+
+/*.assorthment_description:hover {
+	opacity: 1;
+}*/
+
+.assorthment_description {
+	/* ефект при наведенні */
+	/*position: absolute;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 120%;
+	display: flex;
+
+	transition: all 0.2s;
+	text-align: center;*/
+	height: 180px;
+	/*background-color: rgba(25, 25, 65, 0.3);*/
+	background-color: rgba(25, 25, 65, 0.9);
+	color: white;
+	padding: 15px 10px;
+	margin: 10px;
+	border-radius: 4px;
+	/*box-shadow: 0px 0px 20px 7px rgba(40, 40, 90, 0.4);*/
+	box-shadow: 10px 7px 30px 5px rgba(40, 40, 90, 0.4);
+}
+
+h3.product_name {
+	color: white;
+	background-color: rgba(25, 25, 65, 0.9);
+	box-shadow: 0px 0px 15px 10px white inset;
+}
+
+.assorthment_button {}
+
+.main_logo:active {
+	opacity: 0.5;
+}
+
+.jumbotron {
+	min-height: 335px;
+	background-size: cover;
+	padding-left: 0px;
+}
+ 
+.border {
+	border: 1px green;
+}
+
+#row_button {
+	text-align: center;
+	opacity: 0.9;
+}
+
+#row_button:active{
+	padding-left:15px;
+	font-weight: bold;
+	color: green;
+}
+
+.call_button:active{
+	padding-left: 5px;
+	opacity: 0.5; 
+}
+
+.write_button:active{
+	padding-top: : 5px;
+	opacity: 0.5; 
+}
+
+.order_button:active{
+	padding-left: 5px;
+	opacity: 0.5;
+}
+
+.send_button {
+	margin-top: 15px;
+}
+
+.cancel_button{
+	margin-top: 15px;
+}
+
+.controll-label {
+	margin-top:35px;
+}
+
+.logo {
+	margin-top: 10px;
+	background-color: rgb(85, 165, 205);
+	border-radius: 4px;
+	text-align: center;
+	color: white;
+	box-shadow: 10px 10px 30px 0px rgba(40, 40, 90, 0.3);
+}
+
+#nav {
+	text-align: right;	
+}
+a#nav{
+	display: inline;
+}
+
+#call {
+	height: 50px;
+	width: 100px;
+	align-content: right;
+}
+
+#write {
+	height: 50px;
+	width: 100px;
+}
+
+#order {
+	height: 50px;
+	width: 100px;
+}
+
+img#img-circle {
+	text-align: center;
+}
+
+
+
+p {
+	font-family: Garamond;
+}
+
+p,h2#description {
+	font-family: Georgia;
+	font-weight: 500;
+	text-shadow: 10px 10px 20px 0px rgba(40, 40, 90, 0.4);
+
+}
+
+a {
+	align-items: center;
+	color: #6495ed;
+}
+
+
+.send_form {
+	margin: 15px;
+	padding: 10px;
+}
+
+.control-label {
+	text-align: right;
+}
+
+.send_form input, .send_form textarea {
+	width: 100%;
+	margin: 7px 0px;
+}
+
+.form-control{
+	border: none;
+	box-shadow: none;
+}
+.form-group {
+	margin-bottom: 0px;
+}
+.main_form {
+	padding-top: 1px;
+}
+.form_row {
+	margin-bottom: 1px;
+
+}
+.form-control:focus {
+	border: none;
+	border-top: 1px dotted grey;
+	box-shadow: none;
+	/* background-color: rgba(25, 25, 65, 0.9); */
+	/* box-shadow: 0px 0px 15px 10px white inset; */
+	box-shadow: 0px 0px 20px 7px #fc6744 inset;
+	color: black;
+	--webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-ms-transition: all 1s;
+	-o-transition: all 1s;
+	transition: all 1s;
+	
+}
+ .send_form_button_order {
+	margin: 7px;
+	background-color: #fefefe;
+	border-radius: 4px;
+ }
+
+
+/* сторінка "Інформація" */
+.container.about_page {
+	margin-top: 5px;
+}
+.user_nav_a:focus{
+	text-decoration: none;
+	color: rgb(85, 165, 205);
+}
+ .about_page {
+ 	
+ }
+ .user_nav {
+ 	margin-top: 10px;
+ }
+ .bgc {
+ 	background-color: #f0f0f0; 
+ 	opacity: 0.7;
+ }
+ .about_info_div {
+ 	 	height: 30px;
+ 	background-color: #f0f0f0;
+ 	text-align: center;	
+ }
+
+ .text_style {
+	font-family: Garamond;
+	font-weight: bold;
+	font-size: 22px;
+	color:rgb(85, 165, 205);;
+ }
+ .text_style:focus {
+ 	text-decoration: none;
+ 	color: #fc6744;
+ }
+ h3.respond {
+ 	font-family: Georgia;
+ 	color: rgb(85, 165, 205);
+ }
+
+/* "про нас" спливаюче вікно */
+.overlay-nav#info_about_window {
+	display: none;
+	padding: 10px 20px;
+	position: fixed;
+	width: 350px;
+	height: 350px;
+	top: 150px;
+	right: 0;
+	font-family: Georgia;
+	font-size: 18px;
+/* 	background-color: rgba(0, 0, 0, 0.8); */
+	color: #008b8b;
+}
+.close_about {
+	position: fixed;
+	font-style: 45px;
+	font-size: 25px;
+	top:105px;
+	right: 45px;
+	color: grey;
+}
+.close_about:hover {
+		cursor: pointer;
+		--webkit-transition:  all 0.2s;
+		-moz-transition:  all 0.2s;
+		-ms-transition:  all 0.2s;
+		-o-transition:  all 0.2s;
+		transition:  all 0.2s;
+		color: #fc6744;
+}
+
+/* "Як зробити замовлення " спливю вікно */
+.overlay-nav#order_info_window {
+	display: none;
+	padding: 10px 20px;
+	position: fixed;
+	width: 300px;
+	height: 50px;
+	top: 190px;
+	left: 75px;
+	color: 	#008b8b;
+	font-family: Georgia;
+	text-align: right;
+	font-size: 18px;
+	
+}
+
+#phone_number {
+	color: #6495ed;
+	font-family: Georgia;
+}
+#phone_number:hover{
+	color: 	#fc6744;
+	font-size: 20px;
+	font-weight: bold;
+}
+.close_order_info {
+	position: fixed;
+	font-style: 45px;
+	font-size: 25px;
+	top: 165px;
+	left: 110px;
+	color: grey;
+
+}
+.close_order_info:hover {
+		cursor: pointer;
+		--webkit-transition:  all 0.2s;
+		-moz-transition:  all 0.2s;
+		-ms-transition:  all 0.2s;
+		-o-transition:  all 0.2s;
+		transition:  all 0.2s;
+		color: #fc6744;
+}
+
+/* 'як зал. відгук' сплив. вікно */
+.overlay-nav#respond_info_window {
+	display: none;
+	padding: 10px 20px;
+	position: fixed;
+	width: 300px;
+	height: 50px;
+	top: 240px;
+	right: 225px;
+	color: 	#008b8b;
+	font-family: Georgia;
+	text-align: left;
+	font-size: 18px;
+
+}
+.close_respond_info {
+	position: fixed;
+	font-style: 45px;
+	font-size: 25px;
+	top: 215px;
+	right: 215px;
+	color: grey;
+
+}
+.close_respond_info:hover {
+		cursor: pointer;
+		--webkit-transition:  all 0.2s;
+		-moz-transition:  all 0.2s;
+		-ms-transition:  all 0.2s;
+		-o-transition:  all 0.2s;
+		transition:  all 0.2s;
+		color: #fc6744;
+}
+
+/* сплив. вікно реєстрації */
+.overlay-nav#registration_window {
+	display: none;
+	padding: 10px 20px;
+	position: fixed;
+	width: 300px;
+	height: 50px;
+	top: 310px;
+	left: 5px;
+	color: 	#008b8b;
+	font-family: Georgia;
+	text-align: left;
+	font-size: 18px;
+
+}
+.close_registration_window {
+	position: fixed;
+	font-style: 45px;
+	font-size: 25px;
+	top: 290px;
+	right: 215px;
+	color: grey;
+
+}
+.close_respond_info:hover {
+		cursor: pointer;
+		--webkit-transition:  all 0.2s;
+		-moz-transition:  all 0.2s;
+		-ms-transition:  all 0.2s;
+		-o-transition:  all 0.2s;
+		transition:  all 0.2s;
+		color: #fc6744;
+}
+
+/* коментарі */
+.feedback {
+	margin-top: 15px;
+	
+}
+h3.respond {
+	color: black;
+}
+
+
+
+
+
+.a_button {
+	margin-top: 7px;
+}
+
+.a_button:active {
+	box-shadow: 0px 0px 30px 0px rgba(40, 40, 90, 0.4);
+	color: black;
+}
+.a_button:hover {
+	text-decoration: none;
+	color: #fc6744;
+	transition: all 0.5s;
+}
+.send_button:active {
+	box-shadow: 0px 0px 30px 0px rgba(40, 40, 90, 0.4);
+	color: black;
+}
+
+.send_button:hover {
+	text-decoration: none;
+	color: #fc6744;
+	transition: all 0.5s;
+}
+.cancel_button:active {
+	box-shadow: 0px 0px 30px 0px rgba(40, 40, 90, 0.4);
+	color: black;
+	outline: none;
+}
+.cancel_button:hover {
+	text-decoration: none;
+	color: #fc6744;
+	transition: all 0.5s;
+}
+a:hover {
+	text-decoration: none;
+	color: #fc6744;
+	transition: all 0.5s;
+}
+
+/* "Увійдіть, щоб ..." сплив. вікно */
+.overlay-nav#enter_order {
+	display: none;
+	top:0;
+	right: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: lightgrey;
+	font-family: Garamond;
+	text-align: center;
+	opacity: 0.8;
+	color: white;
+	font-size: 20px;
+	
+}
+#close_enter_order {
+	font-size: 30px;
+	font-weight: bold;
+}
+#close_enter_order:hover {
+	cursor: pointer;
+	color: #fc6744;
+	--webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+	
+}
+
+/* "Увійти і написати" спливаюче вікно */
+.overlay-nav#user_autorisation {
+	display: none;
+	padding: 10px 20px;
+	position: fixed;
+	width: 350px;
+	height: 350px;
+	right: 10%;
+	top:15%;
+/* 	background-color: rgba(0, 0, 0, 0.8); */
+	color: blue;
+}
+#close_user_autorisation {
+	position: fixed;
+	font-style: 45px;
+	top: 14%;
+	right: 36%;
+	color: grey;
+}
+#close_user_autorisation:hover{
+		cursor: pointer;
+		--webkit-transition:  all 0.2s;
+		-moz-transition:  all 0.2s;
+		-ms-transition:  all 0.2s;
+		-o-transition:  all 0.2s;
+		transition:  all 0.2s;
+		color: #fc6744;
+	}
+
+/* "Кілька добрих слів" спливаюче вікно */
+.overlay-nav#response {
+	display: none;
+	padding: 10px 20px;
+	position: fixed;
+	width: 350px;
+	height: 350px;
+	right: 8%;
+	top:40%;
+/* 	background-color: rgba(0, 0, 0, 0.8); */
+	color: blue;
+}
+#close_response {
+	position: fixed;
+	font-style: 45px;
+	top: 40%;
+	right: 34%;
+	color: grey;
+}
+#close_response:hover{
+		cursor: pointer;
+		--webkit-transition:  all 0.2s;
+		-moz-transition:  all 0.2s;
+		-ms-transition:  all 0.2s;
+		-o-transition:  all 0.2s;
+		transition:  all 0.2s;
+		color: #fc6744;
+	}
+
+/*  adaptation */
+
+/* col-xs */
+@media (min-width:0px) and (min-width: 480px) {
+p {
+	
+}
+.main_logo {
+	width: 55px;
+}
+.assorthment_box {
+
+}
+
+}
+
+@media (min-width:481px) and (min-width: 767) {
+p {
+	
+}
+}
+
+/* col-sm */
+@media (min-width: 768px) and (min-width: 991px) {
+.home {
+
+}
+p  {
+	
+	
+}
+}
+
+/* col-md */
+@media (min-width: 992px) and (min-width: 1199px) {
+
+}
+
+/* col-lg */
+@media (min-width: 1200px) {
+
+}
+
+

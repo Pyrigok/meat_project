@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block logo %}<span class="span_color_logo">А</span>сортимент...{% endblock logo %}
+
+{% block content %}
+
+			<div class="container ">
+
+				
+				<div class="row level_1 text-left">
+					{% for entry in assorthment %}
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 assorthment_box wow swing" data-wow-delay='0.5s' style="">
+
+							<div class="text-center " >
+								<img class="img-circle" 
+									 src="{{ entry.photo.url }}"
+									 height="200"
+									 width="200">
+								<h3 class="product_name">
+									<strong >{{entry.product_name}}</strong>
+								</h3>
+							</div>
+							<div class="row level_2 ">
+								<div class="assorthment_description ">
+									<p class="wow hinge" data-wow-delay='0.9s' id="description">{{entry.product_description}}</p>
+									<p class="wow hinge" data-wow-delay='0.9s'><strong>Ціна -</strong> {{entry.product_price}}/{{entry.unit}}</p>
+									<p class="wow hinge" data-wow-delay='0.9s'><strong>Залишок на складі - </strong>{{entry.remainder}}/{{entry.unit}}</p>
+
+								</div>
+							</div>
+
+						</div>
+					{% endfor %}
+				</div>	
+			</div>
+
+
+{% endblock content %}

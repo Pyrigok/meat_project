@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block logo %} <span class="span_color_logo">І</span>нформація... {% endblock logo %}
+
+{% block content %}
+	<div class="container about_page" id="about">
+		<div class="row user_nav">
+			<div class="col-xs-3 col-xs-offset-4 bgc about_info_div">
+				<a href="#" class="text_style about_info_a">Про нас</a>
+			</div>
+				<!-- 'про нас' спливаюче вікно -->
+				<div class="overlay-nav" id='info_about_window'>
+					<span class="close_about">&times;</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos esse iste commodi cum sequi ab cupiditate facere, laborum animi, vitae nihil distinctio! Dolorem quaerat, iure hic autem, quia ex rerum!</p>
+				</div>
+
+		</div>
+
+		<div class="row user_nav">
+			<div class="col-xs-3 col-xs-offset-6 bgc">
+				<a href="#" class="text_style order_info">Як зробити замовлення?</a>
+			</div>
+
+			<div class="overlay-nav" id="order_info_window">
+				<span class="close_order_info">&times;</span>
+				<p>Ви можете <br>зробити замовлення за телефоном
+				<span id='phone_number'>067-313-03-74</span>
+				<br>чи на сайті,<br>після реєстрації!</p>
+			</div>
+		</div>
+
+		<div class="row user_nav">
+			<div class="col-xs-3 col-xs-offset-3 bgc text-center">
+				<a href="#" class="text_style respond_info">Як залишити відгук?</a>
+			</div>
+
+			<div class="overlay-nav" id="respond_info_window">
+				<span class="close_respond_info">&times;</span>
+				<p>Ви можете залишити відгук на сайті, після реєстрації!</p>
+			</div>
+		</div>
+
+		<div class="row user_nav">
+			<div class="col-xs-2 col-xs-offset-5 bgc">
+				<a href="/registration" class="text_style registration_fields">Зареєструватися</a>
+			</div>
+		</div>
+
+		<section class="feedback">
+			<div class="row-xs-12 text-center">
+				<h3 class="respond"><span class="span_color_logo">П</span>ро нас кажуть</h3>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="client_said">		
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, consequatur nemo. Incidunt a illo voluptatibus enim, nostrum, quos dolorem repudiandae!</p>
+				
+						<div class="words_about_us">
+							{% for entry in respond %}
+								<p>entry.text</p>
+								<p>entry.name</p>
+							{% endfor %}
+						</div>
+					
+					</div>
+				</div>
+			</div>	
+		</section>	
+		
+	</div>
+{% endblock content %}

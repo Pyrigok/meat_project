@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block logo %} <span class="span_color_logo">В</span>ідправлення замовлення... {% endblock logo %}
+
+{% block content %}
+
+	<div class="main_form">	
+		<form action="{% url 'order_on_the_site' %}" method="post" enctype="multipart/form-data"
+						role="form" class="form-horisontal">
+			{% csrf_token %}
+			
+			
+
+			<div class="row form_row">
+				<div class="form-group {% if errors.description %}has-error{% endif %}">
+				
+					<label for="description" class="col-xs-1 control-label">Деталі замовлення:*</label>
+					<div class="col-xs-7">
+						<span class="help-block">
+							<textarea id="description" name="description"
+									cols="15" rows='2' class="form-control"
+									placeholder="Назва товару, вага...">
+									
+							</textarea>
+							{{ errors.description }}
+						</span>
+					</div>
+				
+				</div>
+			</div>
+
+
+			<div class="row form_row">
+				<div class="form-group">
+				
+					<label class="col-xs-1 control-label"></label>
+					<div class="col-xs-5">
+						<button type="submit" 
+								name="send_button" class="btn btn-primary send_button"><span class="span_color_logo">З</span>амовити</button>
+						<button type="submit" class="btn btn-link cancel_button"
+								name="cancel_button"><span class="span_color_logo">С</span>касувати
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+	<div class="enter_respond">
+
+	
+
+		<div class="overlay-nav" id="user_autorisation">
+			<span id="close_user_autorisation">&times;</span>
+			<form action="" id="autorisation">
+				<h5><span class="span_color_logo">У</span>війти і написати</h5>
+				<input type="text" placeholder="Номер телефону">
+				<input type="text" placeholder="Ім'я"><br>
+				<button type="submit" id="enter"><span class="span_color_logo">У</span>війти</button>
+			</form>
+		</div>
+		
+		<div class="overlay-nav" id="response">
+			<span id="close_response">&times;</span>
+			<form action="">
+				<h5><span class="span_color_logo">Т</span>ут можете написати кілька добрих слів</h5>
+				<textarea name="respond" id="text_respond" cols="30" rows="3"></textarea><br>
+				<button id="send_respond" type="submit"><span class="span_color_logo">О</span>публікувати</button>
+			</form>
+		</div>
+
+	</div>
+
+
+{% endblock content %}

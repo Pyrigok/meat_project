@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+		<!--Для нормального відкриття на різних дисрлеях-->
+	<meta name="viewport" content="width=devise-width, initial-scale=1">
+
+	<meta name="description" value="Копчені вуха">
+
+
+	<title>Копчені вуха  {% block meta_title %}{% endblock meta_title %}</title>
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+	<!-- Animated -->
+	<link rel="stylesheet" href="static/css/animate.css">
+
+	<!-- slick -->
+	<link rel="stylesheet" href="../static/slick/slick.css">
+	<link rel="stylesheet" href="../static/slick/slick-theme.css">
+
+	<!-- Our styles -->
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+	<div class="container" >
+
+	
+		<div style="margin-bottom: 5px; min-height: 530px;">
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" text-left>
+					<a href="{% url 'home' %}" class="main_logo">
+					<p class="wow fadeInRight p_color_logo"><span class="span_color_logo">Н</span>аше м'ясо</p>
+						<!-- <img class="wow fadeInRight" id="our_meat" src="../static/img/our_meat.jpg" alt=""> --> </a><br> 
+					<p class="logo wow swing " data-wow-delay='2.4s' style='z-index=999'>{% block logo %}{% endblock logo %}</p>
+				</div>
+				<nav class="col-xs-12 col-sm-4 col-sm-offset-4 
+							col-md-4 col-md-offset-4 col-lg-3 col-lg-offset-5 
+							main_nav wow fadeInLeft"
+					 id="nav">
+					 <a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
+					<a class="overlay-nav user_nav_a" id="enter"  href="#"><p>Увійти</p></a>
+					
+				</nav>
+			</div>
+
+			<div class="content" style="min-height: 400px;">
+				{% block status_message %}
+					{% if request.GET.status_message %}
+						<div class="alert alert-warning" role='alert'>
+							{{ request.GET.status_message }}
+						</div>
+					
+					{% endif %}
+				{% endblock %}
+			
+			<div class="overlay-nav" id="enter_window">
+				<span class="close_enter_window">&times;</span>
+				<label for=""></label>
+				<input type="text">
+				<label for=""></label>
+				<input type="text">
+			</div>
+				
+
+
+				{% block content %}
+				{% endblock content %}
+					
+			</div>
+
+		</div>
+
+		<section id="bottom">
+			<footer  style="border-top: 1px solid #dddddd; margin-top: 40px;">
+				<div class="row">
+					<div class="col-xs-12">
+						&copy; 2018 Сайт-візитка з продажу м'ясних, копчених виробів <br><span id="span_footer">Produced by Vasyl Pyrih</span>
+					</div>
+				</div>
+			</footer>
+		</section>
+		
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+	<!--     slick js  -->
+	<script src="../static/slick/slick.min.js"></script>
+
+	<script src='https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js'></script>
+
+	      <!-- script to svg-window -->
+    <script src="js/snap.svg-min.js"></script>
+    <script src="js/main.js"></script> <!-- Resource jQuery -->
+
+	<!-- WOW Animated -->
+	<script src="../static/js/wow.min.js"></script>
+
+	<!-- Initialise WOW -->
+	<script>
+		new WOW().init()
+	</script>
+
+    <!-- Respond sliders -->
+    <script>
+      $(document).ready(function(){
+        $('.client_said').slick({
+          infinite: true,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          arrows: true,
+          prevArrow: '<i class="fa feedback_slider_arrows arrow_left fa-chevron-left"></i>',
+          nextArrow: '<i class="fa feedback_slider_arrows arrow_right fa-chevron-right"></i>',
+          dots: true,
+           responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+          });
+      });
+    </script>
+
+
+
+	<script>
+		$(document).ready(function() {
+			var $about_info = $('a.about_info_a');
+			var $question = $('#question');
+			var $order_info = $('a.order_info');
+			var $respond_info = $('a.respond_info')
+
+			$('.overlay-nav#enter_order').show(1000);
+			$('.close_enter_order').click(function() {
+				$('.overlay-nav#enter_order').hide(1500);
+			})
+
+			$order_info.click(function() {
+				$('.overlay-nav#order_info_window').show(1500);
+				$('.overlay-nav#info_about_window').hide(2000);
+				$('.overlay-nav#respond_info_window').hide(2000);
+			})
+			$('.close_order_info').click(function() {
+				$('.overlay-nav#order_info_window').hide(1500);
+			})
+
+			$about_info.click(function() {
+				$('.overlay-nav#info_about_window').show(1500);
+				$('.overlay-nav#order_info_window').hide(2000);
+				$('.overlay-nav#respond_info_window').hide(2000);
+			})
+
+			$('.close_about').click(function() {
+				$('.overlay-nav#info_about_window').hide(2000);
+			
+			})	
+
+			$respond_info.click(function() {
+				$('.overlay-nav#respond_info_window').show(1500);
+				$('.overlay-nav#order_info_window').hide(2000);
+				$('.overlay-nav#info_about_window').hide(2000);
+			})
+
+			$('.close_respond_info').click(function() {
+				$('.overlay-nav#respond_info_window').hide(2000);
+			})
+
+			$('a#enter').click(function() {
+				$('.overlay-nav#enter_window').show(1500);
+				$('.overlay-nav#order_info_window').hide(2000);
+				$('.overlay-nav#info_about_window').hide(2000);
+				$('.overlay-nav#respond_info_window').hide(2000);
+			})
+
+
+
+
+			$question.click(function() {
+				$('.overlay-nav#user_autorisation').show(1500);
+				$('.overlay-nav#info_about_window').hide(2000);
+				$('.overlay-nav#response').hide(2000);
+			})
+
+			$('#close_user_autorisation').click(function() {
+				$('.overlay-nav#user_autorisation').hide(2000);
+			})
+
+			
+		})
+	</script>
+
+
+</body>
+</html>
