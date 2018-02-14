@@ -104,6 +104,10 @@ h3 {
 		color: #fc6744;
 }
 
+
+
+
+
 /* assorthment page */
 .assorthment_box {
 	margin: 20px auto;
@@ -495,6 +499,39 @@ h3.respond {
 }
 
 
+/* order_on_the_site_page */
+
+.overlay-nav#response {
+	display: none;
+	padding: 10px 20px;
+	position: fixed;
+	width: 400px;
+	height: 445px;
+	top: 110px;
+	right: 75px;
+	font-family: Georgia;
+	font-size: 18px;
+/* 	background-color: rgba(0, 0, 0, 0.8); */
+	color: #008b8b;
+}
+#close_response {
+	position: fixed;
+	font-style: 45px;
+	font-size: 25px;
+	top: 95px;
+	right: 470px;
+	color: grey;
+}
+#close_response:hover {
+		cursor: pointer;
+		--webkit-transition:  all 0.2s;
+		-moz-transition:  all 0.2s;
+		-ms-transition:  all 0.2s;
+		-o-transition:  all 0.2s;
+		transition:  all 0.2s;
+		color: #fc6744;
+}
+
 
 
 
@@ -567,63 +604,6 @@ a:hover {
 	
 }
 
-/* "Увійти і написати" спливаюче вікно */
-.overlay-nav#user_autorisation {
-	display: none;
-	padding: 10px 20px;
-	position: fixed;
-	width: 350px;
-	height: 350px;
-	right: 10%;
-	top:15%;
-/* 	background-color: rgba(0, 0, 0, 0.8); */
-	color: blue;
-}
-#close_user_autorisation {
-	position: fixed;
-	font-style: 45px;
-	top: 14%;
-	right: 36%;
-	color: grey;
-}
-#close_user_autorisation:hover{
-		cursor: pointer;
-		--webkit-transition:  all 0.2s;
-		-moz-transition:  all 0.2s;
-		-ms-transition:  all 0.2s;
-		-o-transition:  all 0.2s;
-		transition:  all 0.2s;
-		color: #fc6744;
-	}
-
-/* "Кілька добрих слів" спливаюче вікно */
-.overlay-nav#response {
-	display: none;
-	padding: 10px 20px;
-	position: fixed;
-	width: 350px;
-	height: 350px;
-	right: 8%;
-	top:40%;
-/* 	background-color: rgba(0, 0, 0, 0.8); */
-	color: blue;
-}
-#close_response {
-	position: fixed;
-	font-style: 45px;
-	top: 40%;
-	right: 34%;
-	color: grey;
-}
-#close_response:hover{
-		cursor: pointer;
-		--webkit-transition:  all 0.2s;
-		-moz-transition:  all 0.2s;
-		-ms-transition:  all 0.2s;
-		-o-transition:  all 0.2s;
-		transition:  all 0.2s;
-		color: #fc6744;
-	}
 
 /*  adaptation */
 

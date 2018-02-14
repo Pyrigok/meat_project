@@ -6,11 +6,21 @@ class Order_on_the_site_Model(models.Model):
 		verbose_name_plural = u' - Списки замовлень'
 
 
-	description = models.ForeignKey('RegistrationModel',
+	#description = models.ForeignKey('RegistrationModel',
+
+
+	description = models.CharField (
 		max_length = 500,
 		blank = False,
 		null = False,
 		verbose_name = u'Опис замовлення:')
+
+	address = models.CharField (
+		max_length = 256,
+		blank = False,
+		null = False,
+		default = '',
+		verbose_name = u'Ваша адреса:')
 
 
 

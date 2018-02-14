@@ -39,6 +39,9 @@ EMAIL_HOST_PASSWORD = '1592648732648qqq'
 EMAIL_USE_TLS = False  
 EMAIL_USE_SSL = True
 
+REGISTRATION_OPEN = True # дозволяє чи забороняє нові реєстрації
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'auth_login'
 # Application definition
 
 INSTALLED_APPS = [
@@ -49,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'meat',
+    'meat_project',
+    'registration',
     'crispy_forms',
 ]
 
@@ -60,6 +65,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
 ]
 
 ROOT_URLCONF = 'meat_project.urls'
@@ -127,6 +133,11 @@ USE_TZ = True
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
                             "django.core.context_processors.request",
                             "studentsdb.context_processors.students_proc",)
+
+TEMPLATE_DIRS = (
+    os.path.join( BASE_DIR, 'meat_priject', 'templates'),
+    )
+
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'

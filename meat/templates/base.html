@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -38,12 +39,33 @@
 						<!-- <img class="wow fadeInRight" id="our_meat" src="../static/img/our_meat.jpg" alt=""> --> </a><br> 
 					<p class="logo wow swing " data-wow-delay='2.4s' style='z-index=999'>{% block logo %}{% endblock logo %}</p>
 				</div>
+
 				<nav class="col-xs-12 col-sm-4 col-sm-offset-4 
-							col-md-4 col-md-offset-4 col-lg-3 col-lg-offset-5 
+							col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 
 							main_nav wow fadeInLeft"
 					 id="nav">
-					 <a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
-					<a class="overlay-nav user_nav_a" id="enter"  href="#"><p>Увійти</p></a>
+
+					{% if user.is_authenticated %}
+				
+						 <div class="user_nav_a" id="user_toolbar">
+						  	
+						 	<a href="{% url 'order_on_the_site' %}">Зробіть замовлення, чи залиште відгук</a>
+						 	<a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
+						 	<span>{{ user.username }}</span>|
+						 	<a href="{% url 'auth_logout' %}">{% trans 'Logout' %}</a>
+						 </div>
+
+
+					{% else %}
+
+							<div class="user_nav_a" id="user_toolbar">
+								<a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
+								<a href="{% url 'auth_login' %}">{% trans 'Login' %}</a>
+								<a href="{% url 'registration_register' %}">{% trans 'Registration' %}</a>
+							</div>
+					{% endif %}
+
+				 	<!-- <a class="overlay-nav user_nav_a" id="enter"  href="#"><p>Увійти</p></a> -->
 					
 				</nav>
 			</div>
@@ -58,14 +80,14 @@
 					{% endif %}
 				{% endblock %}
 			
-			<div class="overlay-nav" id="enter_window">
-				<span class="close_enter_window">&times;</span>
-				<label for=""></label>
-				<input type="text">
-				<label for=""></label>
-				<input type="text">
-			</div>
-				
+		<!-- 	<div class="overlay-nav" id="enter_window">
+			<span class="close_enter_window">&times;</span>
+			<label for=""></label>
+			<input type="text">
+			<label for=""></label>
+			<input type="text">
+		</div>
+			 -->
 
 
 				{% block content %}
@@ -158,6 +180,7 @@
 			var $question = $('#question');
 			var $order_info = $('a.order_info');
 			var $respond_info = $('a.respond_info')
+			var $response_btn = $('#response_btn')
 
 			$('.overlay-nav#enter_order').show(1000);
 			$('.close_enter_order').click(function() {
@@ -192,6 +215,14 @@
 
 			$('.close_respond_info').click(function() {
 				$('.overlay-nav#respond_info_window').hide(2000);
+			})
+
+			$response_btn.click(function() {
+				$('.overlay-nav#response').show(1500);
+			})
+
+			$('#close_response').click(function() {
+				$('.overlay-nav#response').hide(2000);
 			})
 
 			$('a#enter').click(function() {

@@ -2,8 +2,8 @@ from django.db import models
 
 class RegistrationModel(models.Model):
 	class Meta(object):
-		verbose_name = u'Зареєстровані клієнти'
-		verbose_name_plural = u'Зареєстровані клієнти'
+		verbose_name = u' - Зареєстровані клієнти'
+		verbose_name_plural = u' - Зареєстровані клієнти'
 
 	name = models.CharField (
 		max_length = 30,
@@ -31,7 +31,7 @@ class RegistrationModel(models.Model):
 
 	phone = models.CharField(
 		max_length = 10,
-		blank = False,
+		blank = False, 
 		null = False,
 		verbose_name = u'Ваш телефон:')
 

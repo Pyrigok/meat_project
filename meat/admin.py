@@ -1,12 +1,14 @@
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 from django.forms import ModelForm, ValidationError
 
-from .models import Order_on_the_site_Model, AssorthmentModel, RegistrationModel, RespondModel
+from .models import Order_on_the_site_Model, AssorthmentModel, RespondModel
+#from .models import  RegistrationModel
 from django.core.urlresolvers import reverse
 
 class OrderListAdmin(admin.ModelAdmin):
-	list_display = ['description']
+	list_display = ['address']
 	ordering = ['description']
 
 class AssorthmentListAdmin(admin.ModelAdmin):
@@ -16,5 +18,5 @@ class AssorthmentListAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register (Order_on_the_site_Model, OrderListAdmin)
 admin.site.register (AssorthmentModel, AssorthmentListAdmin)
-admin.site.register (RegistrationModel)
+#admin.site.register (RegistrationModel)
 admin.site.register (RespondModel)
