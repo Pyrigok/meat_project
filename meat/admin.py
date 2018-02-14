@@ -8,7 +8,7 @@ from .models import Order_on_the_site_Model, AssorthmentModel, RespondModel
 from django.core.urlresolvers import reverse
 
 class OrderListAdmin(admin.ModelAdmin):
-	list_display = ['address']
+	list_display = ['address', 'description']
 	ordering = ['description']
 
 class AssorthmentListAdmin(admin.ModelAdmin):

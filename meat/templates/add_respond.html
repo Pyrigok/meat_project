@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block logo %}<span class="span_color_logo">Д</span>одати відгук...{% endblock logo %}
+
+{% block content %}
+
+	<section class="respond">
+
+		<div class="row" id="respond">
+			<div class="col-xs-8 col-xs-offset-2">
+				<h5 class="text-center"><span class="span_color_logo">Т</span>ут можете написати кілька добрих слів</h5>
+
+				<form action="{% url 'add_respond' %}" method="post"
+					enctype="multipart/form-data" 
+					role="form" class="form-horisontal">
+					{% csrf_token %}
+					
+					<div class="form-group {% if errors.text %}has-error{% endif %}">
+					<span class="help-block">
+						<textarea class="form-control " name="text" id="text" cols="10" rows="7"></textarea>
+					{{ errors.text }}
+					</span>
+
+						<button class="btn btn-primary send_button" name="send_button" id="send_button" type="submit">
+							<span class="span_color_logo">О</span>публікувати
+						</button>	
+
+						<button class="btn btn-link send_button" name="cancel_button" id="cancel_button" type="submit"><span class="span_color_logo">С</span>касувати</button>
+					</div>
+
+				</form>
+			</div>	
+		</div>
+
+	</section>
+
+
+{% endblock content %}

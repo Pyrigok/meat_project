@@ -1,0 +1,23 @@
+	<section class="feedback">
+			<div class="row-xs-12 text-center">
+				<h3 class="respond"><span class="span_color_logo">П</span>ро нас кажуть</h3>
+			</div>
+
+			<div class="row">
+				{% for entry in respond %}
+					<div class="col-xs-3 {% if errors.text %}has-error{% endif %}">
+						<div class="client_said">		
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+						</div>
+
+						<div class="words_about_us">
+							
+								<p>{{entry.text}}</p>
+							
+							
+						</div>	
+					</div>
+				{% endfor %}
+			</div>	
+		</section>	
+		

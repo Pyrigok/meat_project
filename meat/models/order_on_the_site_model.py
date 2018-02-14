@@ -25,4 +25,4 @@ class Order_on_the_site_Model(models.Model):
 
 
 	def __str__(self):
-		return u'%s' % (self.description)
+		return u'%s' % (self.description, self.address)

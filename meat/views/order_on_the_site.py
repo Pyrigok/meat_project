@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
@@ -40,6 +40,8 @@ def order_on_the_site(request):
 
 		elif request.POST.get ('cancel_button') is not None:
 			return HttpResponseRedirect (u'%s?status_message=Замовлення скасоване!' %reverse('home'))
+
+
 
 	else:
 		return render (request, 'order_on_the_site.html')

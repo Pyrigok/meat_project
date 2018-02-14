@@ -3,6 +3,7 @@
 {% block logo %} <span class="span_color_logo">І</span>нформація... {% endblock logo %}
 
 {% block content %}
+
 	<div class="container about_page" id="about">
 		<div class="row user_nav">
 			<div class="col-xs-3 col-xs-offset-4 bgc about_info_div">
@@ -47,20 +48,20 @@
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12">
-					<div class="client_said">		
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-					</div>
+				{% for entry in respond %}
+					<div class="col-xs-3 {% if errors.text %}has-error{% endif %}">
+						<div class="client_said">		
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+						</div>
 
-					<div class="words_about_us">
-						{% for entry in respond %}
-							<p>entry.text</p>
-							<p>entry.name</p>
-						{% endfor %}
+						<div class="words_about_us">
+							
+								<p>{{entry.text}}</p>
+							
+							
+						</div>	
 					</div>
-					
-			
-				</div>
+				{% endfor %}
 			</div>	
 		</section>	
 		

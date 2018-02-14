@@ -455,7 +455,7 @@ a {
 		color: #fc6744;
 }
 
-/* сплив. вікно реєстрації */
+/* сплив. вікно реєстрації
 .overlay-nav#registration_window {
 	display: none;
 	padding: 10px 20px;
@@ -487,7 +487,7 @@ a {
 		-o-transition:  all 0.2s;
 		transition:  all 0.2s;
 		color: #fc6744;
-}
+} */
 
 /* коментарі */
 .feedback {
@@ -501,7 +501,7 @@ h3.respond {
 
 /* order_on_the_site_page */
 
-.overlay-nav#response {
+/* .overlay-nav#response {
 	display: none;
 	padding: 10px 20px;
 	position: fixed;
@@ -511,7 +511,7 @@ h3.respond {
 	right: 75px;
 	font-family: Georgia;
 	font-size: 18px;
-/* 	background-color: rgba(0, 0, 0, 0.8); */
+background-color: rgba(0, 0, 0, 0.8);
 	color: #008b8b;
 }
 #close_response {
@@ -530,7 +530,7 @@ h3.respond {
 		-o-transition:  all 0.2s;
 		transition:  all 0.2s;
 		color: #fc6744;
-}
+} */
 
 
 
@@ -575,7 +575,7 @@ a:hover {
 }
 
 /* "Увійдіть, щоб ..." сплив. вікно */
-.overlay-nav#enter_order {
+/* .overlay-nav#enter_order {
 	display: none;
 	top:0;
 	right: 0;
@@ -602,7 +602,7 @@ a:hover {
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
 	
-}
+} */
 
 
 /*  adaptation */

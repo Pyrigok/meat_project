@@ -16,6 +16,7 @@ urlpatterns = patterns ('',
     #url(r'^registration', 'meat.views.registration_view.registration_view', name='registration'),
   # url(r'^order_on_the_site', SendOrderView.as_view(), name='_order_on_the_site'),
     url(r'^order_on_the_site', 'meat.views.order_on_the_site.order_on_the_site', name='order_on_the_site'),
+    url(r'^add_respond', 'meat.views.add_respond.add_respond', name='add_respond'),
     url(r'^assorthment', 'meat.views.assorthment.assorthment', name='assorthment'),
 
     # users urls
