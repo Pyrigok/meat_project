@@ -1,5 +1,6 @@
 Django==1.8
 mysqlclient==1.3.12
+django-registration-redux==1.2
 olefile==0.44
 Pillow==4.3.0
 pytz==2017.3
