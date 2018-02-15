@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block logo %} <span class="span_color_logo">І</span>нформація... {% endblock logo %}
 
@@ -19,25 +20,25 @@
 
 		<div class="row user_nav">
 			<div class="col-xs-4 col-xs-offset-4 bgc text-center">
-				<a href="#" class="text_style order_info">Як зробити замовлення?</a>
+				<a href="#" class="text_style order_info">{% trans 'How to make an order?' %}</a>
 			</div>
 
 			<div class="overlay-nav" id="order_info_window">
 				<span class="close_order_info">&times;</span>
-				<p>Ви можете <br>зробити замовлення за телефоном
+				<p>{% trans "You can" %}<br>{% trans "make an order by phone" %}
 				<span id='phone_number'>067-313-03-74</span>
-				<br>чи на сайті, після <br><a href="{% url 'registration_register' %}">реєстрації!</a></p>
+				<br>{% trans "or on the site after" %} <br><a href="{% url 'registration_register' %}">{% trans "registrations" %}</a></p>
 			</div>
 		</div>
 
 		<div class="row user_nav">
 			<div class="col-xs-4 col-xs-offset-4 bgc text-center">
-				<a href="#" class="text_style respond_info">Як залишити відгук?</a>
+				<a href="#" class="text_style respond_info">{% trans "How to leave a review?" %}</a>
 			</div>
 
 			<div class="overlay-nav" id="respond_info_window">
 				<span class="close_respond_info">&times;</span>
-				<p>Ви можете залишити відгук на сайті, після <a href="{% url 'registration_register' %}">реєстрації!</a></p>
+				<p>{% trans "You can leave a review after" %} <a href="{% url 'registration_register' %}">{% trans "registrations!" %}</a></p>
 			</div>
 		</div>
 

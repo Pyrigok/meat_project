@@ -9,10 +9,10 @@
 				
 				<div class="row level_1 text-left">
 					{% for entry in assorthment %}
-						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 assorthment_box wow swing" data-wow-delay='0.5s' style="">
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 assorthment_box " style="">
 
 							<div class="text-center " >
-								<img class="img-circle" 
+								<img class="img-circle wow swing" data-wow-delay='0.8s' 
 									 src="{{ entry.photo.url }}"
 									 height="200"
 									 width="200">
@@ -22,9 +22,9 @@
 							</div>
 							<div class="row level_2 ">
 								<div class="assorthment_description ">
-									<p class="wow hinge" data-wow-delay='0.9s' id="description">{{entry.product_description}}</p>
-									<p class="wow hinge" data-wow-delay='0.9s'><strong>Ціна -</strong> {{entry.product_price}}/{{entry.unit}}</p>
-									<p class="wow hinge" data-wow-delay='0.9s'><strong>Залишок на складі - </strong>{{entry.remainder}}/{{entry.unit}}</p>
+									<p class="wow fadeInUp" data-wow-delay='2s' id="description">{{entry.product_description}}</p>
+									<p class="wow fadeInLeft" data-wow-delay='1.5s'><strong>Ціна -</strong> {{entry.product_price}}/{{entry.unit}}</p>
+									<p class="wow fadeInDown" data-wow-delay='2s'><strong>Залишок на складі - </strong>{{entry.remainder}}/{{entry.unit}}</p>
 									
 								</div>
 							</div>

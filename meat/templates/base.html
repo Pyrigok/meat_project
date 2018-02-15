@@ -11,7 +11,7 @@
 	<meta name="description" value="Копчені вуха">
 
 
-	<title>Копчені вуха  {% block meta_title %}{% endblock meta_title %}</title>
+	<title>{% trans "Smoked pork's ears" %}  {% block meta_title %}{% endblock meta_title %}</title>
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="static/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 					<a href="{% url 'home' %}" class="main_logo">
 					<p class="wow fadeInRight p_color_logo"><span class="span_color_logo">Н</span>аше м'ясо</p>
 						<!-- <img class="wow fadeInRight" id="our_meat" src="../static/img/our_meat.jpg" alt=""> --> </a><br> 
-					<p class="logo wow swing " data-wow-delay='2.4s' style='z-index=999'>{% block logo %}{% endblock logo %}</p>
+					<p class="logo wow swing " data-wow-delay='0.1s' style='z-index=999'>{% block logo %}{% endblock logo %}</p>
 				</div>
 
 				<nav class="col-xs-12 col-sm-4 col-sm-offset-4 
@@ -49,8 +49,8 @@
 					
 						 <div class="user_nav_a" id="user_toolbar">
 						  	
-						 	<a href="{% url 'order_on_the_site' %}">Зробіть замовлення</a>, чи <a href="/add_respond">залиште відгук</a>
-						 	<a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
+						 	<a href="{% url 'order_on_the_site' %}">{% trans "Make an order" %}</a>, {% trans "or" %} <a href="/add_respond">{% trans "leave a review" %}</a>
+						 	<a class="user_nav_a"  href="/about.html"><p>{% trans "Information" %}</p></a>
 						 	<span>{{ user.username }}</span>|
 						 	<a href="{% url 'auth_logout' %}">{% trans 'Logout' %}</a>
 						 </div>
@@ -59,7 +59,7 @@
 					{% else %}
 
 							<div class="user_nav_a" id="user_toolbar">
-								<a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
+								<a class="user_nav_a"  href="/about.html"><p>{% trans "Information" %}</p></a>
 								<a href="{% url 'auth_login' %}">{% trans 'Login' %}</a>
 								<a href="{% url 'registration_register' %}">{% trans 'Registration' %}</a>
 							</div>
@@ -101,7 +101,7 @@
 			<footer  style="border-top: 1px solid #dddddd; margin-top: 40px;">
 				<div class="row">
 					<div class="col-xs-12">
-						&copy; 2018 Сайт-візитка з продажу м'ясних, копчених виробів <br><span id="span_footer">Produced by Vasyl Pyrih</span>
+						&copy; 2018 {% trans "Site-business card for the sale of meat and smoked products" %} <br><span id="span_footer">Produced by Vasyl Pyrih</span>
 					</div>
 				</div>
 			</footer>
@@ -251,6 +251,7 @@
 		})
 	</script>
 
+	<script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
 
 </body>
 </html>
