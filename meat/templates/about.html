@@ -6,7 +6,7 @@
 
 	<div class="container about_page" id="about">
 		<div class="row user_nav">
-			<div class="col-xs-3 col-xs-offset-4 bgc about_info_div">
+			<div class="col-xs-4 col-xs-offset-4 bgc text-center about_info_div">
 				<a href="#" class="text_style about_info_a">Про нас</a>
 			</div>
 				<!-- 'про нас' спливаюче вікно -->
@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="row user_nav">
-			<div class="col-xs-3 col-xs-offset-6 bgc">
+			<div class="col-xs-4 col-xs-offset-4 bgc text-center">
 				<a href="#" class="text_style order_info">Як зробити замовлення?</a>
 			</div>
 
@@ -26,18 +26,18 @@
 				<span class="close_order_info">&times;</span>
 				<p>Ви можете <br>зробити замовлення за телефоном
 				<span id='phone_number'>067-313-03-74</span>
-				<br>чи на сайті,<br>після реєстрації!</p>
+				<br>чи на сайті, після <br><a href="{% url 'registration_register' %}">реєстрації!</a></p>
 			</div>
 		</div>
 
 		<div class="row user_nav">
-			<div class="col-xs-3 col-xs-offset-3 bgc text-center">
+			<div class="col-xs-4 col-xs-offset-4 bgc text-center">
 				<a href="#" class="text_style respond_info">Як залишити відгук?</a>
 			</div>
 
 			<div class="overlay-nav" id="respond_info_window">
 				<span class="close_respond_info">&times;</span>
-				<p>Ви можете залишити відгук на сайті, після реєстрації!</p>
+				<p>Ви можете залишити відгук на сайті, після <a href="{% url 'registration_register' %}">реєстрації!</a></p>
 			</div>
 		</div>
 
@@ -48,20 +48,28 @@
 			</div>
 
 			<div class="row">
-				{% for entry in respond %}
-					<div class="col-xs-3 {% if errors.text %}has-error{% endif %}">
-						<div class="client_said">		
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-						</div>
+				<div class="col-xs-12">
+					<div class="feedback_slider">
+					
+						{% for entry in respond %}
+							<div class="feedback_slider_item text-center">
+									<div class="feedback_box">
+										<div class="feedback_shadow">
+											
+												<p>{{entry.text}}</p>
 
-						<div class="words_about_us">
+									
+
+										</div>
+									</div>
+								</div>	
 							
-								<p>{{entry.text}}</p>
-							
-							
-						</div>	
+						{% endfor %}
+						
+
 					</div>
-				{% endfor %}
+				</div>
+				
 			</div>	
 		</section>	
 		

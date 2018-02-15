@@ -64,17 +64,13 @@
 		</form>
 	</div>
 
-	<div class="enter_respond">
-		<div class="row">
-			<div class="col-xs-2 col-xs-offset-1"> 
-				<a href="/add_respond">
-					<button id='response_btn' class="btn btn-primary send_button">
-					<span class="span_color_logo">З</span>алишити відгук
-					</button>
-				</a>
+	<div class="row user_nav">
+			<div class="col-xs-4 col-xs-offset-4 bgc text-center">
+				<a href="{% url 'add_respond' %}" class="text_style order_info">Залишити відгук</a>
 			</div>
-		</div>
 	</div>
+
+
 
 
 {% endblock content %}

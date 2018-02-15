@@ -320,12 +320,15 @@ a {
  .user_nav {
  	margin-top: 10px;
  }
+ 
  .bgc {
  	background-color: #f0f0f0; 
  	opacity: 0.7;
+ 	
+ 	
  }
  .about_info_div {
- 	 	height: 30px;
+ 	height: 30px;
  	background-color: #f0f0f0;
  	text-align: center;	
  }
@@ -334,7 +337,9 @@ a {
 	font-family: Garamond;
 	font-weight: bold;
 	font-size: 22px;
-	color:rgb(85, 165, 205);;
+	color:rgb(85, 165, 205);
+	
+	
  }
  .text_style:focus {
  	text-decoration: none;
@@ -603,6 +608,119 @@ a:hover {
 	transition: all 0.2s;
 	
 } */
+
+/* 
+feedback section */
+.feedback_0_img{
+	display:block;
+	margin:0 auto;
+}
+
+.carousel-control.left{
+	color:#fc6744;
+	background: none;
+	}
+
+.carousel-control.right{
+	color:#fc6744;
+	background: none;
+	}
+
+.carousel-indicators .active{
+	background: #fc6744;
+}
+
+
+/* slick sliders */
+.feedback_box{
+	margin-left:15px;
+	margin-right:15px;
+	padding:10px;
+}
+
+
+.feedback_box p{
+	font-size:27px;
+	margin-top:20px;
+	padding-left:30px;
+	padding-right:30px;
+	margin-bottom:20px
+}
+
+.feedback_box p{
+	font-family: Garamond;
+	font-weight:600;
+}
+
+.feedback_box i.fa-star{
+	color:#ffef3b;
+}
+
+.feedback_shadow{
+	box-shadow:0 0 27px 0 rgba(20,20,21,.09);
+	padding-top: 84px;
+}
+
+
+.feedback_slider_arrows{
+	position:absolute;
+	top:35%;
+	height:50px;
+	width:50px;
+	font-size:28px;
+	z-index:198;
+	--webkit-transform:translateY(-9px);
+	-moz-transform:translateY(-9px);
+	-ms-transform:translateY(-9px);
+	-o-transform:translateY(-9px);
+	transform:translateY(-9px);
+	box-shadow:0 3px 14px 0 rgba(20,20,21,.28);
+	padding:16px;
+	border-radius:50%;
+	color: grey;
+	background-color: #fff;
+}
+
+.feedback_slider_arrows:hover{
+	background-color: #fc6744;
+	color: #fff;
+	cursor: pointer;
+	}
+
+.slick-active{
+	outline :0;
+}
+
+.arrow_right{
+	right: 0;
+	padding-left:20px;
+	}
+
+.arrow_left{
+	left:0;
+}
+
+.slick-dots li button:before{
+	width:21px;
+	height:7px;
+	color:transparent;
+	background-color:#adadad;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	-ms-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+}
+
+.slick-dots li.slick-active button:before{
+	color:transparent;
+	background-color: #fc6744;
+	}
+
+.slick-dots{
+	margin-bottom:-15px;
+}
+
 
 
 /*  adaptation */

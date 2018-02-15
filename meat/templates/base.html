@@ -46,7 +46,7 @@
 					 id="nav">
 
 					{% if user.is_authenticated %}
-				
+					
 						 <div class="user_nav_a" id="user_toolbar">
 						  	
 						 	<a href="{% url 'order_on_the_site' %}">Зробіть замовлення</a>, чи <a href="/add_respond">залиште відгук</a>
@@ -118,8 +118,8 @@
 	<script src='https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js'></script>
 
 	      <!-- script to svg-window -->
-    <script src="js/snap.svg-min.js"></script>
-    <script src="js/main.js"></script> <!-- Resource jQuery -->
+    <script src="../static/js/snap.svg-min.js"></script>
+    <script src="../static/js/main.js"></script> <!-- Resource jQuery -->
 
 	<!-- WOW Animated -->
 	<script src="../static/js/wow.min.js"></script>
@@ -132,14 +132,16 @@
     <!-- Respond sliders -->
     <script>
       $(document).ready(function(){
-        $('.client_said').slick({
+        $('.feedback_slider').slick({
           infinite: true,
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 1,
           arrows: true,
           prevArrow: '<i class="fa feedback_slider_arrows arrow_left fa-chevron-left"></i>',
           nextArrow: '<i class="fa feedback_slider_arrows arrow_right fa-chevron-right"></i>',
           dots: true,
+          autoplay: true,
+          autoplaySpeed: 1500,
            responsive: [
             {
               breakpoint: 1024,
