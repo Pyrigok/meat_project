@@ -1,7 +1,9 @@
 from django.shortcuts import render
+
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+
 
 from ..models import RespondModel
 
@@ -24,7 +26,7 @@ def add_respond(request):
 				respond=RespondModel(**data)
 				respond.save()
 
-				return HttpResponseRedirect (u'%s?status_message=Відгук опубліковано!' %(reverse('add_respond')))
+				return HttpResponseRedirect (u'%s?status_message=Відгук опубліковано' %(reverse('add_respond')))
 
 			else:
 				return render (request, 'add_respond.html',

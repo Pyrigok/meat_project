@@ -1,4 +1,3 @@
-{% load i18n %}
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -8,10 +7,10 @@
 		<!--Для нормального відкриття на різних дисрлеях-->
 	<meta name="viewport" content="width=devise-width, initial-scale=1">
 
-	<meta name="description" value="Копчені вуха">
+	<meta name="description" value='Копчені вуха'>
 
 
-	<title>{% trans "Smoked pork's ears" %}  {% block meta_title %}{% endblock meta_title %}</title>
+	<title>Копчені вуха, копчене м'ясо'  {% block meta_title %}{% endblock meta_title %}</title>
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="static/css/bootstrap.min.css">
@@ -19,12 +18,15 @@
 	<!-- Animated -->
 	<link rel="stylesheet" href="static/css/animate.css">
 
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="static/css/font-awesome.min.css">
+
 	<!-- slick -->
-	<link rel="stylesheet" href="../static/slick/slick.css">
-	<link rel="stylesheet" href="../static/slick/slick-theme.css">
+	<link rel="stylesheet" href="static/slick/slick.css">
+	<link rel="stylesheet" href="static/slick/slick-theme.css">
 
 	<!-- Our styles -->
-	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 <body>
 	<div class="container" >
@@ -49,19 +51,19 @@
 					
 						 <div class="user_nav_a" id="user_toolbar">
 						  	
-						 	<a href="{% url 'order_on_the_site' %}">{% trans "Make an order" %}</a>, {% trans "or" %} <a href="/add_respond">{% trans "leave a review" %}</a>
-						 	<a class="user_nav_a"  href="/about.html"><p>{% trans "Information" %}</p></a>
+						 	<a href="{% url 'order_on_the_site' %}">Зробити замовлення</a>, або <a href="/add_respond">залишити відгук</a>
+						 	<a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
 						 	<span>{{ user.username }}</span>|
-						 	<a href="{% url 'auth_logout' %}">{% trans 'Logout' %}</a>
+						 	<a href="{% url 'auth_logout' %}">Вийти</a>
 						 </div>
 
 
 					{% else %}
 
 							<div class="user_nav_a" id="user_toolbar">
-								<a class="user_nav_a"  href="/about.html"><p>{% trans "Information" %}</p></a>
-								<a href="{% url 'auth_login' %}">{% trans 'Login' %}</a>
-								<a href="{% url 'registration_register' %}">{% trans 'Registration' %}</a>
+								<a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
+								<a href="{% url 'auth_login' %}">Увійти</a>
+								<a href="{% url 'registration_register' %}">Зареєструватись</a>
 							</div>
 					{% endif %}
 
@@ -79,15 +81,6 @@
 					
 					{% endif %}
 				{% endblock %}
-			
-		<!-- 	<div class="overlay-nav" id="enter_window">
-			<span class="close_enter_window">&times;</span>
-			<label for=""></label>
-			<input type="text">
-			<label for=""></label>
-			<input type="text">
-		</div>
-			 -->
 
 
 				{% block content %}
@@ -101,7 +94,7 @@
 			<footer  style="border-top: 1px solid #dddddd; margin-top: 40px;">
 				<div class="row">
 					<div class="col-xs-12">
-						&copy; 2018 {% trans "Site-business card for the sale of meat and smoked products" %} <br><span id="span_footer">Produced by Vasyl Pyrih</span>
+						&copy; 2018 Сайт-візитка для продажу м'ясних, копчених виробів <br><span id="span_footer">Produced by Vasyl Pyrih</span>
 					</div>
 				</div>
 			</footer>
@@ -234,24 +227,11 @@
 				$('.overlay-nav#respond_info_window').hide(2000);
 			})
 
-
-
-
-			$question.click(function() {
-				$('.overlay-nav#user_autorisation').show(1500);
-				$('.overlay-nav#info_about_window').hide(2000);
-				$('.overlay-nav#response').hide(2000);
-			})
-
-			$('#close_user_autorisation').click(function() {
-				$('.overlay-nav#user_autorisation').hide(2000);
-			})
-
 			
 		})
 	</script>
 
-	<script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
+	
 
 </body>
 </html>

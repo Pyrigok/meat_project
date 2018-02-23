@@ -619,6 +619,7 @@ feedback section */
 .carousel-control.left{
 	color:#fc6744;
 	background: none;
+	font-size: 11px;
 	}
 
 .carousel-control.right{
@@ -675,7 +676,7 @@ feedback section */
 	-o-transform:translateY(-9px);
 	transform:translateY(-9px);
 	box-shadow:0 3px 14px 0 rgba(20,20,21,.28);
-	padding:16px;
+	padding:13px;
 	border-radius:50%;
 	color: grey;
 	background-color: #fff;

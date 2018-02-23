@@ -4,6 +4,8 @@ from django.core.urlresolvers import reverse
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
 
+
+
 from ..models import Order_on_the_site_Model
 
 @login_required
@@ -32,14 +34,13 @@ def order_on_the_site(request):
 				order_entry.save()
 
 				return HttpResponseRedirect (
-						u'%s?status_message=Ваше замовлення успішно відправлено!' %(reverse('order_on_the_site')))
-
+						u'%s?status_message=Замовлення успішно надіслане!' %(reverse('order_on_the_site')))
 			else:
 				return render (request, 'order_on_the_site.html',
 						{'errors': errors})
 
 		elif request.POST.get ('cancel_button') is not None:
-			return HttpResponseRedirect (u'%s?status_message=Замовлення скасоване!' %reverse('home'))
+			return HttpResponseRedirect (u'%s?status_message=Замовлення скасоване!' %(reverse('home')))
 
 
 
