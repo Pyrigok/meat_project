@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 from django.conf import global_settings
 
+
 PORTAL_URL = 'http://localhost:8000'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,6 +43,8 @@ EMAIL_USE_SSL = True
 REGISTRATION_OPEN = True # дозволяє чи забороняє нові реєстрації
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'auth_login'
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,11 +57,11 @@ INSTALLED_APPS = [
     'meat',
     'meat_project',
     'registration',
-    'crispy_forms',
-]
+  ]
 
 MIDDLEWARE_CLASSES = [
 	'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -75,14 +78,21 @@ CRISPY_TEMPLATE_PACK = 'bootstrap'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                os.path.join(BASE_DIR, 'meat_project', 'templates')
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.csrf',
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+            
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -137,11 +147,9 @@ TIME_ZONE = 'UTC'
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
                             "django.core.context_processors.request",
-                            "studentsdb.context_processors.students_proc",)
+                            "meat_project.context_processors.meat_proc",)
 
-TEMPLATE_DIRS = (
-    os.path.join( BASE_DIR, 'meat_priject', 'templates'),
-    )
+
 
 
 STATIC_URL = '/static/'

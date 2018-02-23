@@ -7,18 +7,10 @@ from django.views.generic.base import RedirectView
 from .settings import MEDIA_ROOT, DEBUG
 
 
-js_info_dict = {
-    'packages': ('meat',),
-}
-
 urlpatterns = patterns ('',
-    # Examples:
-    # url(r'^$', 'meat_project.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+
     url(r'^$', 'meat.views.home.home', name='home'),
     url(r'^about', 'meat.views.about.about', name='about'),
-    #url(r'^registration', 'meat.views.registration_view.registration_view', name='registration'),
-  # url(r'^order_on_the_site', SendOrderView.as_view(), name='_order_on_the_site'),
     url(r'^order_on_the_site', 'meat.views.order_on_the_site.order_on_the_site', name='order_on_the_site'),
     url(r'^add_respond', 'meat.views.add_respond.add_respond', name='add_respond'),
     url(r'^assorthment', 'meat.views.assorthment.assorthment', name='assorthment'),
@@ -30,9 +22,6 @@ urlpatterns = patterns ('',
     # ст. 630 
     # В підпакеті simple лежить простіший варіант реєстрації користувачів - миттєвий.
     # Після форми реєстрації людина одразу може входити на сайт.
-
-    url(r'^jsi18n\.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
-
 
     url(r'^admin/', include(admin.site.urls)),
 )
