@@ -29,17 +29,6 @@ SECRET_KEY = 'zm-iu=y#n6d9-3lepz5rddrw!07f-_(c&wudh_zutz0kgf67_v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-ADMIN_EMAIL = 'pyrigok@ukr.net'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '465'
-EMAIL_HOST_USER = 'pyrigechok'
-EMAIL_HOST_PASSWORD = '1592648732648qqq'
-#DEFAULT_EMAIL_FROM = 'pyrigechok@gmail.com'
-EMAIL_USE_TLS = False  
-EMAIL_USE_SSL = True
-
 REGISTRATION_OPEN = True # дозволяє чи забороняє нові реєстрації
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'auth_login'
