@@ -11,8 +11,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RenameModel(
-            old_name='Registration_Model',
-            new_name='RegistrationModel',
+        migrations.AlterField(
+            model_name='order_on_the_site_model',
+            name='client',
+            field=models.CharField(verbose_name='Кдіент - ', max_length=256, default=''),
         ),
     ]

@@ -30,6 +30,10 @@ class Migration(migrations.Migration):
             name='Order_on_the_site_Model',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', primary_key=True, serialize=False, auto_created=True)),
+                ('client', models.CharField(verbose_name='Автор - ', max_length=256, default='')),
+                ('description', models.CharField(verbose_name='Опис замовлення:', max_length=500)),
+                ('address', models.CharField(verbose_name='Адреса:', max_length=256, default='')),
+                ('created_on', models.DateField(verbose_name='Запис створений - ', auto_now_add=True)),
             ],
             options={
                 'verbose_name': ' - Списки замовлень',
@@ -37,34 +41,16 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Registration_Model',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', primary_key=True, serialize=False, auto_created=True)),
-                ('name', models.CharField(verbose_name="Ваше ім'я:", max_length=30, null=True)),
-                ('last_name', models.CharField(verbose_name='Ваше прізвище:', max_length=30, null=True)),
-                ('email', models.EmailField(verbose_name='Ваша email-адреса:', max_length=100)),
-                ('address', models.CharField(verbose_name='Ваша адреса:', max_length=256)),
-                ('phone', models.CharField(verbose_name='Ваш телефон:', max_length=10)),
-            ],
-            options={
-                'verbose_name': 'Зареєстровані клієнти',
-                'verbose_name_plural': 'Зареєстровані клієнти',
-            },
-        ),
-        migrations.CreateModel(
             name='RespondModel',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', primary_key=True, serialize=False, auto_created=True)),
-                ('text', models.ForeignKey(verbose_name='Кілька слів про продукт', max_length=256, to='meat.Registration_Model')),
+                ('author', models.CharField(verbose_name='Автор - ', max_length=256, default='')),
+                ('text', models.CharField(verbose_name='Кілька слів про продукт', max_length=256)),
+                ('created_on', models.DateField(verbose_name='Запис створений - ', auto_now_add=True)),
             ],
             options={
-                'verbose_name': 'Кілька слів про продукт',
-                'verbose_name_plural': 'Кілька слів про продукт',
+                'verbose_name': ' - Відгуки клієнтів',
+                'verbose_name_plural': ' - Відгуки',
             },
-        ),
-        migrations.AddField(
-            model_name='order_on_the_site_model',
-            name='description',
-            field=models.ForeignKey(verbose_name='Опис замовлення:', max_length=500, to='meat.Registration_Model'),
         ),
     ]

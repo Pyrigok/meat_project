@@ -28,6 +28,23 @@
 			</div>
 
 			<div class="row form_row">
+				<div class="form-group {% if errors.phone %}has-error{% endif %}">
+				
+					<label for="phone" class="col-xs-1 control-label">Номер телефону:*</label>
+					<div class="col-xs-7">
+						<span class="help-block">
+							<input id="phone" name="phone" type="tel" 
+									class="form-control"
+									placeholder="Ваш телефон">
+									
+							{{ errors.phone }}
+						</span>
+					</div>
+				
+				</div>
+			</div>
+
+			<div class="row form_row">
 				<div class="form-group {% if errors.address %}has-error{% endif %}">
 				
 					<label for="address" class="col-xs-1 control-label">Куди надсилати:*</label>

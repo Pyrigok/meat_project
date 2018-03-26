@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-		<!--Для нормального відкриття на різних дисрлеях-->
-	<meta name="viewport" content="width=devise-width, initial-scale=1">
+		<!--Для нормального відкриття на різних дисплеях-->
+<!-- 	<meta name="viewport" content="width=devise-width, initial-scale=1"> -->
 
 	<meta name="description" value='Копчені вуха'>
 
@@ -13,20 +13,21 @@
 	<title>Копчені вуха, копчене м'ясо'  {% block meta_title %}{% endblock meta_title %}</title>
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
 
 	<!-- Animated -->
-	<link rel="stylesheet" href="static/css/animate.css">
+	<link rel="stylesheet" href="../static/css/animate.css">
 
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="static/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/font-awesome.min.css">
 
 	<!-- slick -->
-	<link rel="stylesheet" href="static/slick/slick.css">
-	<link rel="stylesheet" href="static/slick/slick-theme.css">
+	<link rel="stylesheet" href="../static/slick/slick.css">
+	<link rel="stylesheet" href="../static/slick/slick-theme.css">
 
 	<!-- Our styles -->
-	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 </head>
 <body>
 	<div class="container" >
@@ -34,12 +35,16 @@
 	
 		<div style="margin-bottom: 5px; min-height: 530px;">
 
-			<div class="row">
+			<div class="row header">
+			
 				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" text-left>
+
 					<a href="{% url 'home' %}" class="main_logo">
-					<p class="wow fadeInRight p_color_logo"><span class="span_color_logo">Н</span>аше м'ясо</p>
-						<!-- <img class="wow fadeInRight" id="our_meat" src="../static/img/our_meat.jpg" alt=""> --> </a><br> 
+						<p class="wow fadeInRight p_color_logo"><span class="span_color_logo">Н</span>аше м'ясо</p>
+					</a> 
+						<br> 
 					<p class="logo wow swing " data-wow-delay='0.1s' style='z-index=999'>{% block logo %}{% endblock logo %}</p>
+
 				</div>
 
 				<nav class="col-xs-12 col-sm-4 col-sm-offset-4 
@@ -53,23 +58,28 @@
 						  	
 						 	<a href="{% url 'order_on_the_site' %}">Зробити замовлення</a>, або <a href="/add_respond">залишити відгук</a>
 						 	<a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
-						 	<span>{{ user.username }}</span>|
+						 	<a href="{% url 'profile' %}">{{ user.get_full_name|default:user.username }} </a>|
 						 	<a href="{% url 'auth_logout' %}">Вийти</a>
+
 						 </div>
 
 
 					{% else %}
 
 							<div class="user_nav_a" id="user_toolbar">
+
 								<a class="user_nav_a"  href="/about.html"><p>Інформація</p></a>
-								<a href="{% url 'auth_login' %}">Увійти</a>
+								<a href="{% url 'auth_login' %}">Увійти </a>|
 								<a href="{% url 'registration_register' %}">Зареєструватись</a>
+
 							</div>
+
 					{% endif %}
 
 				 	<!-- <a class="overlay-nav user_nav_a" id="enter"  href="#"><p>Увійти</p></a> -->
 					
 				</nav>
+
 			</div>
 
 			<div class="content" style="min-height: 400px;">
@@ -90,7 +100,7 @@
 
 		</div>
 
-		<section id="bottom">
+		<section id="bottom" class="footer">
 			<footer  style="border-top: 1px solid #dddddd; margin-top: 40px;">
 				<div class="row">
 					<div class="col-xs-12">

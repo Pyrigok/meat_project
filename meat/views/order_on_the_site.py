@@ -10,17 +10,30 @@ from ..models import Order_on_the_site_Model
 
 @login_required
 def order_on_the_site(request):
+	
 	if request.method == 'POST':
 		if request.POST.get('send_button') is not None:
 
 			errors = {}
 			data = {}
 
+			client = request.user
+			data['client'] = client
+
+			email = request.user.email
+			data['email'] = email
+		
 			description = request.POST.get ('description', '').strip()
 			if not description:
 				errors ['description'] = u"Це поле є обов'язковим!"
 			else:
 				data ['description'] = description
+
+			phone = request.POST.get ('phone' ,'').strip()
+			if not phone:
+				errors['phone'] = u"Це поле є обов'язковим!"
+			else:
+				data['phone'] = phone
 
 			address = request.POST.get ('address', '').strip()
 			if not description:

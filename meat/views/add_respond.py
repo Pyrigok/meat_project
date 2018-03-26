@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.models import User
 
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -10,17 +11,22 @@ from ..models import RespondModel
 @login_required
 def add_respond(request):
 	respond=RespondModel.objects.all()
+
 	if request.method == 'POST':
 		if request.POST.get('send_button') is not None:
 
 			errors = {}
 			data = {}
 
+			author = request.user
+			data ['author'] = author
+
 			text = request.POST.get ('text', '').strip()
 			if not text:
 				errors ['text'] = u"Коментар без добрих слів не відправляється!"
 			else:
 				data ['text'] = text
+				
 
 			if not errors:
 				respond=RespondModel(**data)
@@ -42,4 +48,5 @@ def add_respond(request):
 @login_required
 def show_respond(request):
 	respond = RespondModel.objects.all()
+
 	return render (request, 'about.html', {'respond': respond})

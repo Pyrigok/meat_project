@@ -1,8 +1,9 @@
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
-#from meat.views._order_on_the_site import SendOrderView
+
 from django.contrib.auth import views as auth_views
-from django.views.generic.base import RedirectView
+from django.views.generic.base import RedirectView, TemplateView
+from django.contrib.auth.decorators import login_required
 
 from .settings import MEDIA_ROOT, DEBUG
 
@@ -23,6 +24,10 @@ urlpatterns = patterns ('',
     # В підпакеті simple лежить простіший варіант реєстрації користувачів - миттєвий.
     # Після форми реєстрації людина одразу може входити на сайт.
 
+    # User related urls
+    url(r'^users/profile/$', login_required(TemplateView.as_view(template_name='registration/profile.html')), name='profile'),
+    url(r'^register/complete/$', RedirectView.as_view(pattern_name='home'), name='registration_complete'),
+    
     url(r'^admin/', include(admin.site.urls)),
 )
 

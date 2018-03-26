@@ -14,10 +14,11 @@
 					enctype="multipart/form-data" 
 					role="form" class="form-horisontal">
 					{% csrf_token %}
-					
+
+						
 					<div class="form-group {% if errors.text %}has-error{% endif %}">
 					<span class="help-block">
-						<textarea class="form-control " name="text" id="text" cols="10" rows="7"></textarea>
+						<textarea class="form-control " name="text" id="text" cols="10" rows="2"></textarea>
 					{{ errors.text }}
 					</span>
 

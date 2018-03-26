@@ -2,8 +2,23 @@
 
 {% block title %}Вхід на сайт{% endblock title %}
 
-{% block content %}
+{% block status_message %}
+    {% if form.errors %}
+      <div class="alert alert-warning" role="alert">
+        {% if form.non_field_errors %}
+          {{ form.non_field_errors.as_text }}
+        {% else %}
+          <p>Введіть коректні дані</p>
+        {% endif %}
+      </div>
+    {% endif %}
+{% endblock %}
 
+{% block content %}
+    <div class="row justify-content-center">
+      <div class="col-xs-offset-3 col-xs-6">
+        
+      
     <form action="{% url 'auth_login' %}" method="post">
 
         {% csrf_token %}
@@ -29,7 +44,8 @@
 
 
     <p>Забули свій пароль? 
-        <a href="{% url 'auth_password_reset' %}">Скинути</a>.
+        <a href="{% url 'auth_password_reset' %}">Скинути</a>
     </p>
-
+    </div>
+    </div>
 {% endblock %}

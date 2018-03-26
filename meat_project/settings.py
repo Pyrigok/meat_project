@@ -43,6 +43,7 @@ EMAIL_USE_SSL = True
 REGISTRATION_OPEN = True # дозволяє чи забороняє нові реєстрації
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'auth_login'
+LOGOUT_URL = 'auth_logout'
 
 
 # Application definition
@@ -73,13 +74,13 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'meat_project.urls'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-                os.path.join(BASE_DIR, 'meat_project', 'templates')
+                os.path.join(BASE_DIR, 'meat_project', 'templates'),
                 ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -147,7 +148,8 @@ TIME_ZONE = 'UTC'
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
                             "django.core.context_processors.request",
-                            "meat_project.context_processors.meat_proc",)
+                            "meat_project.context_processors.meat_proc",
+                            )
 
 
 

@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('meat', '0005_auto_20180213_1632'),
+        ('meat', '0003_auto_20180323_1511'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='order_on_the_site_model',
-            name='address',
-            field=models.CharField(verbose_name='Ваша адреса:', max_length=256, default=''),
+            name='phone',
+            field=models.CharField(verbose_name='Номер телефону - ', default='', max_length=12),
         ),
     ]
