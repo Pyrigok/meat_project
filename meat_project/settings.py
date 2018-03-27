@@ -28,6 +28,7 @@ SECRET_KEY = 'zm-iu=y#n6d9-3lepz5rddrw!07f-_(c&wudh_zutz0kgf67_v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = []
 
 REGISTRATION_OPEN = True # дозволяє чи забороняє нові реєстрації
 LOGIN_REDIRECT_URL = 'home'
